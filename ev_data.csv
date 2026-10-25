@@ -1,0 +1,151 @@
+year,rto_location,vehicle_category,registrations
+2021,Bengaluru Central (KA1),Electric (BOV),1209
+2021,Bengaluru Central (KA1),Pure EV,0
+2021,Bengaluru Central (KA1),Strong Hybrid EV,0
+2022,Bengaluru Central (KA1),Electric (BOV),5295
+2022,Bengaluru Central (KA1),Pure EV,0
+2022,Bengaluru Central (KA1),Strong Hybrid EV,0
+2023,Bengaluru Central (KA1),Electric (BOV),8678
+2023,Bengaluru Central (KA1),Pure EV,0
+2023,Bengaluru Central (KA1),Strong Hybrid EV,0
+2024,Bengaluru Central (KA1),Electric (BOV),8541
+2024,Bengaluru Central (KA1),Pure EV,3624
+2024,Bengaluru Central (KA1),Strong Hybrid EV,856
+2025,Bengaluru Central (KA1),Electric (BOV),2162
+2025,Bengaluru Central (KA1),Pure EV,5646
+2025,Bengaluru Central (KA1),Strong Hybrid EV,937
+2021,Bengaluru North(KA4),Electric (BOV),1240
+2021,Bengaluru North(KA4),Pure EV,0
+2021,Bengaluru North(KA4),Strong Hybrid EV,0
+2022,Bengaluru North(KA4),Electric (BOV),6314
+2022,Bengaluru North(KA4),Pure EV,0
+2022,Bengaluru North(KA4),Strong Hybrid EV,0
+2023,Bengaluru North(KA4),Electric (BOV),10615
+2023,Bengaluru North(KA4),Pure EV,0
+2023,Bengaluru North(KA4),Strong Hybrid EV,0
+2024,Bengaluru North(KA4),Electric (BOV),8700
+2024,Bengaluru North(KA4),Pure EV,2676
+2024,Bengaluru North(KA4),Strong Hybrid EV,562
+2025,Bengaluru North(KA4),Electric (BOV),2310
+2025,Bengaluru North(KA4),Pure EV,4863
+2025,Bengaluru North(KA4),Strong Hybrid EV,532
+2021,Bengaluru East(KA3),Electric (BOV),2116
+2021,Bengaluru East(KA3),Pure EV,0
+2021,Bengaluru East(KA3),Strong Hybrid EV,0
+2022,Bengaluru East(KA3),Electric (BOV),5535
+2022,Bengaluru East(KA3),Pure EV,0
+2022,Bengaluru East(KA3),Strong Hybrid EV,0
+2023,Bengaluru East(KA3),Electric (BOV),11074
+2023,Bengaluru East(KA3),Pure EV,0
+2023,Bengaluru East(KA3),Strong Hybrid EV,0
+2024,Bengaluru East(KA3),Electric (BOV),9177
+2024,Bengaluru East(KA3),Pure EV,2895
+2024,Bengaluru East(KA3),Strong Hybrid EV,960
+2025,Bengaluru East(KA3),Electric (BOV),2237
+2025,Bengaluru East(KA3),Pure EV,5340
+2025,Bengaluru East(KA3),Strong Hybrid EV,906
+2021,Bengaluru West(KA2),Electric (BOV),1736
+2021,Bengaluru West(KA2),Pure EV,0
+2021,Bengaluru West(KA2),Strong Hybrid EV,0
+2022,Bengaluru West(KA2),Electric (BOV),6449
+2022,Bengaluru West(KA2),Pure EV,0
+2022,Bengaluru West(KA2),Strong Hybrid EV,0
+2023,Bengaluru West(KA2),Electric (BOV),10826
+2023,Bengaluru West(KA2),Pure EV,0
+2023,Bengaluru West(KA2),Strong Hybrid EV,0
+2024,Bengaluru West(KA2),Electric (BOV),9222
+2024,Bengaluru West(KA2),Pure EV,2966
+2024,Bengaluru West(KA2),Strong Hybrid EV,457
+2025,Bengaluru West(KA2),Electric (BOV),2808
+2025,Bengaluru West(KA2),Pure EV,5766
+2025,Bengaluru West(KA2),Strong Hybrid EV,410
+2021,Bengaluru South(KA5),Electric (BOV),4914
+2021,Bengaluru South(KA5),Pure EV,0
+2021,Bengaluru South(KA5),Strong Hybrid EV,0
+2022,Bengaluru South(KA5),Electric (BOV),16652
+2022,Bengaluru South(KA5),Pure EV,0
+2022,Bengaluru South(KA5),Strong Hybrid EV,0
+2023,Bengaluru South(KA5),Electric (BOV),20162
+2023,Bengaluru South(KA5),Pure EV,0
+2023,Bengaluru South(KA5),Strong Hybrid EV,0
+2024,Bengaluru South(KA5),Electric (BOV),14838
+2024,Bengaluru South(KA5),Pure EV,7503
+2024,Bengaluru South(KA5),Strong Hybrid EV,826
+2025,Bengaluru South(KA5),Electric (BOV),4760
+2025,Bengaluru South(KA5),Pure EV,9470
+2025,Bengaluru South(KA5),Strong Hybrid EV,816
+2021,Yahlanka(KA-50),Electric (BOV),745
+2021,Yahlanka(KA-50),Pure EV,0
+2021,Yahlanka(KA-50),Strong Hybrid EV,0
+2022,Yahlanka(KA-50),Electric (BOV),2517
+2022,Yahlanka(KA-50),Pure EV,0
+2022,Yahlanka(KA-50),Strong Hybrid EV,0
+2023,Yahlanka(KA-50),Electric (BOV),7434
+2023,Yahlanka(KA-50),Pure EV,0
+2023,Yahlanka(KA-50),Strong Hybrid EV,0
+2024,Yahlanka(KA-50),Electric (BOV),5471
+2024,Yahlanka(KA-50),Pure EV,1562
+2024,Yahlanka(KA-50),Strong Hybrid EV,207
+2025,Yahlanka(KA-50),Electric (BOV),1022
+2025,Yahlanka(KA-50),Pure EV,3127
+2025,Yahlanka(KA-50),Strong Hybrid EV,341
+2021,Electronic City(KA-51),Electric (BOV),6014
+2021,Electronic City(KA-51),Pure EV,0
+2021,Electronic City(KA-51),Strong Hybrid EV,0
+2022,Electronic City(KA-51),Electric (BOV),9034
+2022,Electronic City(KA-51),Pure EV,0
+2022,Electronic City(KA-51),Strong Hybrid EV,0
+2023,Electronic City(KA-51),Electric (BOV),9223
+2023,Electronic City(KA-51),Pure EV,0
+2023,Electronic City(KA-51),Strong Hybrid EV,0
+2024,Electronic City(KA-51),Electric (BOV),7961
+2024,Electronic City(KA-51),Pure EV,2532
+2024,Electronic City(KA-51),Strong Hybrid EV,416
+2025,Electronic City(KA-51),Electric (BOV),2678
+2025,Electronic City(KA-51),Pure EV,4436
+2025,Electronic City(KA-51),Strong Hybrid EV,467
+2021,Krishnarajapuram(KA-53),Electric (BOV),930
+2021,Krishnarajapuram(KA-53),Pure EV,0
+2021,Krishnarajapuram(KA-53),Strong Hybrid EV,0
+2022,Krishnarajapuram(KA-53),Electric (BOV),3581
+2022,Krishnarajapuram(KA-53),Pure EV,0
+2022,Krishnarajapuram(KA-53),Strong Hybrid EV,0
+2023,Krishnarajapuram(KA-53),Electric (BOV),6372
+2023,Krishnarajapuram(KA-53),Pure EV,0
+2023,Krishnarajapuram(KA-53),Strong Hybrid EV,0
+2024,Krishnarajapuram(KA-53),Electric (BOV),4640
+2024,Krishnarajapuram(KA-53),Pure EV,1465
+2024,Krishnarajapuram(KA-53),Strong Hybrid EV,282
+2025,Krishnarajapuram(KA-53),Electric (BOV),1130
+2025,Krishnarajapuram(KA-53),Pure EV,3339
+2025,Krishnarajapuram(KA-53),Strong Hybrid EV,359
+2021,Jnanabharathi(KA-41),Electric (BOV),287
+2021,Jnanabharathi(KA-41),Pure EV,0
+2021,Jnanabharathi(KA-41),Strong Hybrid EV,0
+2022,Jnanabharathi(KA-41),Electric (BOV),1574
+2022,Jnanabharathi(KA-41),Pure EV,0
+2022,Jnanabharathi(KA-41),Strong Hybrid EV,0
+2023,Jnanabharathi(KA-41),Electric (BOV),4362
+2023,Jnanabharathi(KA-41),Pure EV,0
+2023,Jnanabharathi(KA-41),Strong Hybrid EV,0
+2024,Jnanabharathi(KA-41),Electric (BOV),2978
+2024,Jnanabharathi(KA-41),Pure EV,1066
+2024,Jnanabharathi(KA-41),Strong Hybrid EV,129
+2025,Jnanabharathi(KA-41),Electric (BOV),530
+2025,Jnanabharathi(KA-41),Pure EV,2612
+2025,Jnanabharathi(KA-41),Strong Hybrid EV,93
+2021,Chandapura(KA-59),Electric (BOV),271
+2021,Chandapura(KA-59),Pure EV,0
+2021,Chandapura(KA-59),Strong Hybrid EV,0
+2022,Chandapura(KA-59),Electric (BOV),511
+2022,Chandapura(KA-59),Pure EV,0
+2022,Chandapura(KA-59),Strong Hybrid EV,0
+2023,Chandapura(KA-59),Electric (BOV),2344
+2023,Chandapura(KA-59),Pure EV,0
+2023,Chandapura(KA-59),Strong Hybrid EV,0
+2024,Chandapura(KA-59),Electric (BOV),1430
+2024,Chandapura(KA-59),Pure EV,348
+2024,Chandapura(KA-59),Strong Hybrid EV,29
+2025,Chandapura(KA-59),Electric (BOV),305
+2025,Chandapura(KA-59),Pure EV,837
+2025,Chandapura(KA-59),Strong Hybrid EV,21
