@@ -1,0 +1,51 @@
+name: Update EV data
+
+on:
+  schedule:
+    - cron: "30 2 * * 1"   # every Monday, 02:30 UTC = 08:00 India time
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write           # needed so the job can save the new CSV
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Get the scraper
+        # Cloned at run time rather than copied, because the project has no licence file.
+        run: git clone --depth 1 https://github.com/RevTpark/vahan-scraper.git scraper
+
+      - name: Install libraries
+        run: pip install -r scraper/requirements.txt pandas
+
+      - name: Download Vahan data for the 10 Bengaluru RTOs
+        run: >
+          python scraper/scripts/api.py
+          --yaxis "Fuel" --xaxis "Month Wise" --state "Karnataka"
+          --start-year 2021 --out raw
+          --rto "BENGALURU CENTRAL" "BENGALURU EAST" "BENGALURU NORTH"
+          "BENGALURU SOUTH" "BENGALURU WEST" "CHANDAPURA" "ELECTRONIC CITY"
+          "JNANABHARATHI" "KRISHNARAJAPURAM" "YALAHANKA"
+
+      - name: Build the dashboard CSV
+        run: python build_csv.py raw --strict
+
+      - name: Save the CSV if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ev_data.csv
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update EV data $(date -u +%F)"
+            git push
+          fi
