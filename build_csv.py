@@ -6,6 +6,7 @@ Usage (from the ev-dashboard folder):
 import argparse
 import re
 import sys
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -83,6 +84,9 @@ def main():
 
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(args.out, index=False)
+    # Record the refresh date (India time) so the dashboard can show "Last updated".
+    today = datetime.now(timezone(timedelta(hours=5, minutes=30))).date().isoformat()
+    Path(args.out).with_name("last_updated.txt").write_text(today + "\n")
 
     print(f"Wrote {len(out)} rows to {args.out}")
     print("\nTotals per year vs your manual workbook:")
