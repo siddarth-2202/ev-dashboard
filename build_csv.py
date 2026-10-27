@@ -1,7 +1,7 @@
 """Turn the scraper's per-RTO CSV files into data/ev_data.csv for the dashboard.
 
 Usage (from the ev-dashboard folder):
-    python build_csv.py "H:\\Python scripts\\vahan-scraper\\vahan-scraper-main\\vahan_data"
+    python build_csv.py "H:\\Python scripts\\vahan-scraper\\vahan-scraper-main\\vahan_data" --strict
 """
 import argparse
 import re
@@ -24,13 +24,17 @@ RTOS = {
     "KA53": "Krishnarajapuram (KA53)",
     "KA59": "Chandapura (KA59)",
 }
+# Vahan fuel name -> dashboard category. Two fuel names can share one category:
+# Vahan moved vehicles from PETROL/HYBRID to PETROL(E20)/HYBRID, so they are added together.
 FUELS = {
     "ELECTRIC(BOV)": "Electric (BOV)",
     "PURE EV": "Pure EV",
     "STRONG HYBRID EV": "Strong Hybrid EV",
+    "PETROL/HYBRID": "Petrol Hybrid (incl. E20)",
+    "PETROL(E20)/HYBRID": "Petrol Hybrid (incl. E20)",
+    "DIESEL/HYBRID": "Diesel Hybrid",
 }
-# Your manual totals from the old workbook, used only to sanity-check the scrape.
-OLD_TOTALS = {2021: 19462, 2022: 57462, 2023: 91090, 2024: 104319, 2025: 70260}
+CATEGORIES = list(dict.fromkeys(FUELS.values()))
 
 
 def to_number(s):
@@ -58,12 +62,15 @@ def main():
         df = pd.read_csv(f, dtype=str)
         df["Fuel"] = df["Fuel"].str.strip().str.upper()
         df = df[df["Fuel"].isin(FUELS)]
-        got = dict(zip(df["Fuel"], to_number(df["TOTAL"])))
-        for fuel, label in FUELS.items():  # missing fuel = 0, like your old sheet
-            parts.append((year, RTOS[code], label, int(got.get(fuel, 0))))
+        got = {}
+        for fuel, n in zip(df["Fuel"], to_number(df["TOTAL"])):
+            got[FUELS[fuel]] = got.get(FUELS[fuel], 0) + int(n)
+        for cat in CATEGORIES:  # a missing fuel counts as 0, as in the old sheet
+            parts.append((year, RTOS[code], cat, got.get(cat, 0)))
 
     out = pd.DataFrame(parts, columns=["year", "rto_location", "vehicle_category", "registrations"])
     out = out.sort_values(["year", "rto_location", "vehicle_category"])
+
     # Safety checks: never replace good data with a broken scrape.
     problems = []
     new_tot = out.groupby("year")["registrations"].sum()
@@ -89,11 +96,9 @@ def main():
     Path(args.out).with_name("last_updated.txt").write_text(today + "\n")
 
     print(f"Wrote {len(out)} rows to {args.out}")
-    print("\nTotals per year vs your manual workbook:")
-    tot = out.groupby("year")["registrations"].sum()
-    for y, v in tot.items():
-        old = OLD_TOTALS.get(y)
-        print(f"  {y}: scraped {v:>8,}" + (f" | manual {old:>8,} | diff {v - old:+,}" if old else " | (not in manual data)"))
+    print("\nRegistrations per category and year:")
+    print(out.pivot_table(index="vehicle_category", columns="year", values="registrations", aggfunc="sum")
+          .to_string(float_format=lambda v: f"{v:,.0f}"))
 
 
 if __name__ == "__main__":
