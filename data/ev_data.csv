@@ -2,180 +2,300 @@ year,rto_location,vehicle_category,registrations
 2021,Bengaluru Central (KA1),Electric (BOV),1218
 2021,Bengaluru Central (KA1),Pure EV,0
 2021,Bengaluru Central (KA1),Strong Hybrid EV,0
+2021,Bengaluru Central (KA1),Petrol Hybrid (incl. E20),645
+2021,Bengaluru Central (KA1),Diesel Hybrid,2
 2021,Bengaluru East (KA3),Electric (BOV),2111
 2021,Bengaluru East (KA3),Pure EV,0
 2021,Bengaluru East (KA3),Strong Hybrid EV,0
+2021,Bengaluru East (KA3),Petrol Hybrid (incl. E20),1628
+2021,Bengaluru East (KA3),Diesel Hybrid,0
 2021,Bengaluru North (KA4),Electric (BOV),1227
 2021,Bengaluru North (KA4),Pure EV,0
 2021,Bengaluru North (KA4),Strong Hybrid EV,0
+2021,Bengaluru North (KA4),Petrol Hybrid (incl. E20),990
+2021,Bengaluru North (KA4),Diesel Hybrid,0
 2021,Bengaluru South (KA5),Electric (BOV),4855
 2021,Bengaluru South (KA5),Pure EV,0
 2021,Bengaluru South (KA5),Strong Hybrid EV,0
+2021,Bengaluru South (KA5),Petrol Hybrid (incl. E20),1258
+2021,Bengaluru South (KA5),Diesel Hybrid,1
 2021,Bengaluru West (KA2),Electric (BOV),1723
 2021,Bengaluru West (KA2),Pure EV,0
 2021,Bengaluru West (KA2),Strong Hybrid EV,0
+2021,Bengaluru West (KA2),Petrol Hybrid (incl. E20),879
+2021,Bengaluru West (KA2),Diesel Hybrid,0
 2021,Chandapura (KA59),Electric (BOV),306
 2021,Chandapura (KA59),Pure EV,0
 2021,Chandapura (KA59),Strong Hybrid EV,0
+2021,Chandapura (KA59),Petrol Hybrid (incl. E20),44
+2021,Chandapura (KA59),Diesel Hybrid,0
 2021,Electronic City (KA51),Electric (BOV),5977
 2021,Electronic City (KA51),Pure EV,0
 2021,Electronic City (KA51),Strong Hybrid EV,0
+2021,Electronic City (KA51),Petrol Hybrid (incl. E20),952
+2021,Electronic City (KA51),Diesel Hybrid,0
 2021,Jnanabharathi (KA41),Electric (BOV),301
 2021,Jnanabharathi (KA41),Pure EV,0
 2021,Jnanabharathi (KA41),Strong Hybrid EV,0
+2021,Jnanabharathi (KA41),Petrol Hybrid (incl. E20),473
+2021,Jnanabharathi (KA41),Diesel Hybrid,1
 2021,Krishnarajapuram (KA53),Electric (BOV),928
 2021,Krishnarajapuram (KA53),Pure EV,0
 2021,Krishnarajapuram (KA53),Strong Hybrid EV,0
+2021,Krishnarajapuram (KA53),Petrol Hybrid (incl. E20),552
+2021,Krishnarajapuram (KA53),Diesel Hybrid,0
 2021,Yelahanka (KA50),Electric (BOV),747
 2021,Yelahanka (KA50),Pure EV,0
 2021,Yelahanka (KA50),Strong Hybrid EV,0
+2021,Yelahanka (KA50),Petrol Hybrid (incl. E20),404
+2021,Yelahanka (KA50),Diesel Hybrid,0
 2022,Bengaluru Central (KA1),Electric (BOV),5316
 2022,Bengaluru Central (KA1),Pure EV,0
 2022,Bengaluru Central (KA1),Strong Hybrid EV,0
-2022,Bengaluru East (KA3),Electric (BOV),5486
+2022,Bengaluru Central (KA1),Petrol Hybrid (incl. E20),1393
+2022,Bengaluru Central (KA1),Diesel Hybrid,16
+2022,Bengaluru East (KA3),Electric (BOV),5484
 2022,Bengaluru East (KA3),Pure EV,0
 2022,Bengaluru East (KA3),Strong Hybrid EV,0
+2022,Bengaluru East (KA3),Petrol Hybrid (incl. E20),2198
+2022,Bengaluru East (KA3),Diesel Hybrid,15
 2022,Bengaluru North (KA4),Electric (BOV),6268
 2022,Bengaluru North (KA4),Pure EV,0
 2022,Bengaluru North (KA4),Strong Hybrid EV,0
+2022,Bengaluru North (KA4),Petrol Hybrid (incl. E20),1387
+2022,Bengaluru North (KA4),Diesel Hybrid,5
 2022,Bengaluru South (KA5),Electric (BOV),16458
 2022,Bengaluru South (KA5),Pure EV,1
 2022,Bengaluru South (KA5),Strong Hybrid EV,0
+2022,Bengaluru South (KA5),Petrol Hybrid (incl. E20),1840
+2022,Bengaluru South (KA5),Diesel Hybrid,8
 2022,Bengaluru West (KA2),Electric (BOV),6424
 2022,Bengaluru West (KA2),Pure EV,0
 2022,Bengaluru West (KA2),Strong Hybrid EV,0
+2022,Bengaluru West (KA2),Petrol Hybrid (incl. E20),1134
+2022,Bengaluru West (KA2),Diesel Hybrid,3
 2022,Chandapura (KA59),Electric (BOV),581
 2022,Chandapura (KA59),Pure EV,0
 2022,Chandapura (KA59),Strong Hybrid EV,0
+2022,Chandapura (KA59),Petrol Hybrid (incl. E20),60
+2022,Chandapura (KA59),Diesel Hybrid,0
 2022,Electronic City (KA51),Electric (BOV),9085
 2022,Electronic City (KA51),Pure EV,0
 2022,Electronic City (KA51),Strong Hybrid EV,0
+2022,Electronic City (KA51),Petrol Hybrid (incl. E20),1133
+2022,Electronic City (KA51),Diesel Hybrid,3
 2022,Jnanabharathi (KA41),Electric (BOV),1582
 2022,Jnanabharathi (KA41),Pure EV,0
 2022,Jnanabharathi (KA41),Strong Hybrid EV,0
+2022,Jnanabharathi (KA41),Petrol Hybrid (incl. E20),602
+2022,Jnanabharathi (KA41),Diesel Hybrid,0
 2022,Krishnarajapuram (KA53),Electric (BOV),3570
 2022,Krishnarajapuram (KA53),Pure EV,0
 2022,Krishnarajapuram (KA53),Strong Hybrid EV,0
+2022,Krishnarajapuram (KA53),Petrol Hybrid (incl. E20),620
+2022,Krishnarajapuram (KA53),Diesel Hybrid,1
 2022,Yelahanka (KA50),Electric (BOV),2509
 2022,Yelahanka (KA50),Pure EV,0
 2022,Yelahanka (KA50),Strong Hybrid EV,0
+2022,Yelahanka (KA50),Petrol Hybrid (incl. E20),580
+2022,Yelahanka (KA50),Diesel Hybrid,3
 2023,Bengaluru Central (KA1),Electric (BOV),8683
 2023,Bengaluru Central (KA1),Pure EV,0
 2023,Bengaluru Central (KA1),Strong Hybrid EV,0
+2023,Bengaluru Central (KA1),Petrol Hybrid (incl. E20),3043
+2023,Bengaluru Central (KA1),Diesel Hybrid,37
 2023,Bengaluru East (KA3),Electric (BOV),11093
 2023,Bengaluru East (KA3),Pure EV,0
 2023,Bengaluru East (KA3),Strong Hybrid EV,0
+2023,Bengaluru East (KA3),Petrol Hybrid (incl. E20),3713
+2023,Bengaluru East (KA3),Diesel Hybrid,40
 2023,Bengaluru North (KA4),Electric (BOV),10515
 2023,Bengaluru North (KA4),Pure EV,0
 2023,Bengaluru North (KA4),Strong Hybrid EV,0
+2023,Bengaluru North (KA4),Petrol Hybrid (incl. E20),2409
+2023,Bengaluru North (KA4),Diesel Hybrid,27
 2023,Bengaluru South (KA5),Electric (BOV),19970
 2023,Bengaluru South (KA5),Pure EV,0
 2023,Bengaluru South (KA5),Strong Hybrid EV,0
+2023,Bengaluru South (KA5),Petrol Hybrid (incl. E20),3559
+2023,Bengaluru South (KA5),Diesel Hybrid,44
 2023,Bengaluru West (KA2),Electric (BOV),10794
 2023,Bengaluru West (KA2),Pure EV,0
 2023,Bengaluru West (KA2),Strong Hybrid EV,0
+2023,Bengaluru West (KA2),Petrol Hybrid (incl. E20),2044
+2023,Bengaluru West (KA2),Diesel Hybrid,10
 2023,Chandapura (KA59),Electric (BOV),2450
 2023,Chandapura (KA59),Pure EV,0
 2023,Chandapura (KA59),Strong Hybrid EV,0
+2023,Chandapura (KA59),Petrol Hybrid (incl. E20),97
+2023,Chandapura (KA59),Diesel Hybrid,0
 2023,Electronic City (KA51),Electric (BOV),9295
 2023,Electronic City (KA51),Pure EV,0
 2023,Electronic City (KA51),Strong Hybrid EV,0
+2023,Electronic City (KA51),Petrol Hybrid (incl. E20),2001
+2023,Electronic City (KA51),Diesel Hybrid,12
 2023,Jnanabharathi (KA41),Electric (BOV),4354
 2023,Jnanabharathi (KA41),Pure EV,0
 2023,Jnanabharathi (KA41),Strong Hybrid EV,0
+2023,Jnanabharathi (KA41),Petrol Hybrid (incl. E20),826
+2023,Jnanabharathi (KA41),Diesel Hybrid,5
 2023,Krishnarajapuram (KA53),Electric (BOV),6355
 2023,Krishnarajapuram (KA53),Pure EV,0
 2023,Krishnarajapuram (KA53),Strong Hybrid EV,0
+2023,Krishnarajapuram (KA53),Petrol Hybrid (incl. E20),1202
+2023,Krishnarajapuram (KA53),Diesel Hybrid,21
 2023,Yelahanka (KA50),Electric (BOV),7374
 2023,Yelahanka (KA50),Pure EV,0
 2023,Yelahanka (KA50),Strong Hybrid EV,0
+2023,Yelahanka (KA50),Petrol Hybrid (incl. E20),1087
+2023,Yelahanka (KA50),Diesel Hybrid,9
 2024,Bengaluru Central (KA1),Electric (BOV),8572
 2024,Bengaluru Central (KA1),Pure EV,3624
 2024,Bengaluru Central (KA1),Strong Hybrid EV,859
+2024,Bengaluru Central (KA1),Petrol Hybrid (incl. E20),2007
+2024,Bengaluru Central (KA1),Diesel Hybrid,105
 2024,Bengaluru East (KA3),Electric (BOV),9196
 2024,Bengaluru East (KA3),Pure EV,2901
 2024,Bengaluru East (KA3),Strong Hybrid EV,962
+2024,Bengaluru East (KA3),Petrol Hybrid (incl. E20),2385
+2024,Bengaluru East (KA3),Diesel Hybrid,116
 2024,Bengaluru North (KA4),Electric (BOV),8674
 2024,Bengaluru North (KA4),Pure EV,2676
 2024,Bengaluru North (KA4),Strong Hybrid EV,575
+2024,Bengaluru North (KA4),Petrol Hybrid (incl. E20),1767
+2024,Bengaluru North (KA4),Diesel Hybrid,44
 2024,Bengaluru South (KA5),Electric (BOV),14741
 2024,Bengaluru South (KA5),Pure EV,7482
 2024,Bengaluru South (KA5),Strong Hybrid EV,828
+2024,Bengaluru South (KA5),Petrol Hybrid (incl. E20),2509
+2024,Bengaluru South (KA5),Diesel Hybrid,53
 2024,Bengaluru West (KA2),Electric (BOV),9190
 2024,Bengaluru West (KA2),Pure EV,2950
 2024,Bengaluru West (KA2),Strong Hybrid EV,462
+2024,Bengaluru West (KA2),Petrol Hybrid (incl. E20),1563
+2024,Bengaluru West (KA2),Diesel Hybrid,38
 2024,Chandapura (KA59),Electric (BOV),1493
 2024,Chandapura (KA59),Pure EV,364
 2024,Chandapura (KA59),Strong Hybrid EV,29
+2024,Chandapura (KA59),Petrol Hybrid (incl. E20),96
+2024,Chandapura (KA59),Diesel Hybrid,2
 2024,Electronic City (KA51),Electric (BOV),7982
 2024,Electronic City (KA51),Pure EV,2530
 2024,Electronic City (KA51),Strong Hybrid EV,420
+2024,Electronic City (KA51),Petrol Hybrid (incl. E20),1285
+2024,Electronic City (KA51),Diesel Hybrid,39
 2024,Jnanabharathi (KA41),Electric (BOV),3087
 2024,Jnanabharathi (KA41),Pure EV,1073
 2024,Jnanabharathi (KA41),Strong Hybrid EV,133
+2024,Jnanabharathi (KA41),Petrol Hybrid (incl. E20),763
+2024,Jnanabharathi (KA41),Diesel Hybrid,8
 2024,Krishnarajapuram (KA53),Electric (BOV),4630
 2024,Krishnarajapuram (KA53),Pure EV,1466
 2024,Krishnarajapuram (KA53),Strong Hybrid EV,282
+2024,Krishnarajapuram (KA53),Petrol Hybrid (incl. E20),856
+2024,Krishnarajapuram (KA53),Diesel Hybrid,20
 2024,Yelahanka (KA50),Electric (BOV),5448
 2024,Yelahanka (KA50),Pure EV,1550
 2024,Yelahanka (KA50),Strong Hybrid EV,206
+2024,Yelahanka (KA50),Petrol Hybrid (incl. E20),933
+2024,Yelahanka (KA50),Diesel Hybrid,20
 2025,Bengaluru Central (KA1),Electric (BOV),3983
 2025,Bengaluru Central (KA1),Pure EV,9391
 2025,Bengaluru Central (KA1),Strong Hybrid EV,1439
+2025,Bengaluru Central (KA1),Petrol Hybrid (incl. E20),1469
+2025,Bengaluru Central (KA1),Diesel Hybrid,183
 2025,Bengaluru East (KA3),Electric (BOV),3204
 2025,Bengaluru East (KA3),Pure EV,10424
 2025,Bengaluru East (KA3),Strong Hybrid EV,1452
+2025,Bengaluru East (KA3),Petrol Hybrid (incl. E20),1798
+2025,Bengaluru East (KA3),Diesel Hybrid,241
 2025,Bengaluru North (KA4),Electric (BOV),3409
 2025,Bengaluru North (KA4),Pure EV,7775
 2025,Bengaluru North (KA4),Strong Hybrid EV,930
+2025,Bengaluru North (KA4),Petrol Hybrid (incl. E20),1158
+2025,Bengaluru North (KA4),Diesel Hybrid,84
 2025,Bengaluru South (KA5),Electric (BOV),6462
 2025,Bengaluru South (KA5),Pure EV,15919
 2025,Bengaluru South (KA5),Strong Hybrid EV,1317
+2025,Bengaluru South (KA5),Petrol Hybrid (incl. E20),1726
+2025,Bengaluru South (KA5),Diesel Hybrid,114
 2025,Bengaluru West (KA2),Electric (BOV),4245
 2025,Bengaluru West (KA2),Pure EV,9709
 2025,Bengaluru West (KA2),Strong Hybrid EV,723
+2025,Bengaluru West (KA2),Petrol Hybrid (incl. E20),1110
+2025,Bengaluru West (KA2),Diesel Hybrid,66
 2025,Chandapura (KA59),Electric (BOV),398
 2025,Chandapura (KA59),Pure EV,1155
 2025,Chandapura (KA59),Strong Hybrid EV,31
+2025,Chandapura (KA59),Petrol Hybrid (incl. E20),63
+2025,Chandapura (KA59),Diesel Hybrid,3
 2025,Electronic City (KA51),Electric (BOV),4926
 2025,Electronic City (KA51),Pure EV,7212
 2025,Electronic City (KA51),Strong Hybrid EV,723
+2025,Electronic City (KA51),Petrol Hybrid (incl. E20),1105
+2025,Electronic City (KA51),Diesel Hybrid,48
 2025,Jnanabharathi (KA41),Electric (BOV),705
 2025,Jnanabharathi (KA41),Pure EV,3455
 2025,Jnanabharathi (KA41),Strong Hybrid EV,225
+2025,Jnanabharathi (KA41),Petrol Hybrid (incl. E20),635
+2025,Jnanabharathi (KA41),Diesel Hybrid,17
 2025,Krishnarajapuram (KA53),Electric (BOV),1642
 2025,Krishnarajapuram (KA53),Pure EV,5232
 2025,Krishnarajapuram (KA53),Strong Hybrid EV,611
+2025,Krishnarajapuram (KA53),Petrol Hybrid (incl. E20),777
+2025,Krishnarajapuram (KA53),Diesel Hybrid,51
 2025,Yelahanka (KA50),Electric (BOV),1372
 2025,Yelahanka (KA50),Pure EV,4557
 2025,Yelahanka (KA50),Strong Hybrid EV,476
-2026,Bengaluru Central (KA1),Electric (BOV),2722
-2026,Bengaluru Central (KA1),Pure EV,13217
+2025,Yelahanka (KA50),Petrol Hybrid (incl. E20),809
+2025,Yelahanka (KA50),Diesel Hybrid,28
+2026,Bengaluru Central (KA1),Electric (BOV),2724
+2026,Bengaluru Central (KA1),Pure EV,13249
 2026,Bengaluru Central (KA1),Strong Hybrid EV,1345
+2026,Bengaluru Central (KA1),Petrol Hybrid (incl. E20),1540
+2026,Bengaluru Central (KA1),Diesel Hybrid,198
 2026,Bengaluru East (KA3),Electric (BOV),1919
-2026,Bengaluru East (KA3),Pure EV,13598
-2026,Bengaluru East (KA3),Strong Hybrid EV,1292
+2026,Bengaluru East (KA3),Pure EV,13603
+2026,Bengaluru East (KA3),Strong Hybrid EV,1293
+2026,Bengaluru East (KA3),Petrol Hybrid (incl. E20),1745
+2026,Bengaluru East (KA3),Diesel Hybrid,120
 2026,Bengaluru North (KA4),Electric (BOV),2095
-2026,Bengaluru North (KA4),Pure EV,8824
+2026,Bengaluru North (KA4),Pure EV,8855
 2026,Bengaluru North (KA4),Strong Hybrid EV,673
-2026,Bengaluru South (KA5),Electric (BOV),2987
-2026,Bengaluru South (KA5),Pure EV,29042
+2026,Bengaluru North (KA4),Petrol Hybrid (incl. E20),1341
+2026,Bengaluru North (KA4),Diesel Hybrid,72
+2026,Bengaluru South (KA5),Electric (BOV),2988
+2026,Bengaluru South (KA5),Pure EV,29098
 2026,Bengaluru South (KA5),Strong Hybrid EV,1132
-2026,Bengaluru West (KA2),Electric (BOV),3050
-2026,Bengaluru West (KA2),Pure EV,14174
-2026,Bengaluru West (KA2),Strong Hybrid EV,630
-2026,Chandapura (KA59),Electric (BOV),340
-2026,Chandapura (KA59),Pure EV,1373
+2026,Bengaluru South (KA5),Petrol Hybrid (incl. E20),1748
+2026,Bengaluru South (KA5),Diesel Hybrid,115
+2026,Bengaluru West (KA2),Electric (BOV),3054
+2026,Bengaluru West (KA2),Pure EV,14269
+2026,Bengaluru West (KA2),Strong Hybrid EV,634
+2026,Bengaluru West (KA2),Petrol Hybrid (incl. E20),1225
+2026,Bengaluru West (KA2),Diesel Hybrid,65
+2026,Chandapura (KA59),Electric (BOV),341
+2026,Chandapura (KA59),Pure EV,1379
 2026,Chandapura (KA59),Strong Hybrid EV,35
+2026,Chandapura (KA59),Petrol Hybrid (incl. E20),103
+2026,Chandapura (KA59),Diesel Hybrid,0
 2026,Electronic City (KA51),Electric (BOV),5126
-2026,Electronic City (KA51),Pure EV,9848
+2026,Electronic City (KA51),Pure EV,9898
 2026,Electronic City (KA51),Strong Hybrid EV,610
+2026,Electronic City (KA51),Petrol Hybrid (incl. E20),1157
+2026,Electronic City (KA51),Diesel Hybrid,60
 2026,Jnanabharathi (KA41),Electric (BOV),638
-2026,Jnanabharathi (KA41),Pure EV,4217
+2026,Jnanabharathi (KA41),Pure EV,4238
 2026,Jnanabharathi (KA41),Strong Hybrid EV,212
-2026,Krishnarajapuram (KA53),Electric (BOV),1274
-2026,Krishnarajapuram (KA53),Pure EV,7012
-2026,Krishnarajapuram (KA53),Strong Hybrid EV,715
+2026,Jnanabharathi (KA41),Petrol Hybrid (incl. E20),694
+2026,Jnanabharathi (KA41),Diesel Hybrid,17
+2026,Krishnarajapuram (KA53),Electric (BOV),1275
+2026,Krishnarajapuram (KA53),Pure EV,7044
+2026,Krishnarajapuram (KA53),Strong Hybrid EV,716
+2026,Krishnarajapuram (KA53),Petrol Hybrid (incl. E20),923
+2026,Krishnarajapuram (KA53),Diesel Hybrid,60
 2026,Yelahanka (KA50),Electric (BOV),737
-2026,Yelahanka (KA50),Pure EV,5560
+2026,Yelahanka (KA50),Pure EV,5590
 2026,Yelahanka (KA50),Strong Hybrid EV,414
+2026,Yelahanka (KA50),Petrol Hybrid (incl. E20),880
+2026,Yelahanka (KA50),Diesel Hybrid,18
