@@ -19,8 +19,10 @@ RTOS = {
     "KA4": "Bengaluru North (KA4)",
     "KA5": "Bengaluru South (KA5)",
     "KA41": "Jnanabharathi (KA41)",
+    "KA43": "Devanahalli (KA43)",  # Bengaluru Rural district
     "KA50": "Yelahanka (KA50)",
     "KA51": "Electronic City (KA51)",
+    "KA52": "Nelamangala (KA52)",  # Bengaluru Rural district
     "KA53": "Krishnarajapuram (KA53)",
     "KA59": "Chandapura (KA59)",
 }
