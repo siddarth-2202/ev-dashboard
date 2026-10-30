@@ -8,28 +8,10 @@ import streamlit as st
 
 st.set_page_config(page_title="Bengaluru EV registrations", layout="wide")
 
-CHART_CATS = ["Electric (BOV)", "Pure EV", "Strong Hybrid EV", "Petrol Hybrid (incl. E20)"]
-TABLE_ONLY = "Diesel Hybrid"  # small numbers: shown in the table, left out of every chart
-PAL_LIGHT = {"Electric (BOV)": "#2F5D9B", "Pure EV": "#0E9F7E",
-             "Strong Hybrid EV": "#E3A21A", "Petrol Hybrid (incl. E20)": "#8E5BB5"}
-PAL_DARK = {"Electric (BOV)": "#6C9BE0", "Pure EV": "#2FD1A8",
-            "Strong Hybrid EV": "#F2BC4B", "Petrol Hybrid (incl. E20)": "#B58BDD"}
+CATS = ["Electric (BOV)", "Pure EV", "Strong Hybrid EV", "Petrol Hybrid (incl. E20)"]
+COLORS = {"Electric (BOV)": "#2F5D9B", "Pure EV": "#0E9F7E",
+          "Strong Hybrid EV": "#E3A21A", "Petrol Hybrid (incl. E20)": "#8E5BB5"}
 IST = timezone(timedelta(hours=5, minutes=30))
-
-DARK_CSS = """<style>
-.stApp, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {background-color:#0E1512 !important;}
-[data-testid="stSidebar"], [data-testid="stSidebar"] > div:first-child {background-color:#16211C !important;}
-.stApp h1, .stApp h2, .stApp h3, .stApp h4, .stApp p, .stApp label, .stApp li,
-[data-testid="stMetricValue"], [data-testid="stMetricLabel"] *, [data-testid="stCaptionContainer"] *,
-[data-testid="stWidgetLabel"] *, [data-testid="stMarkdownContainer"] *, [data-testid="stToolbar"] *,
-[data-testid="stRadio"] label *, [data-testid="stCheckbox"] label *, [data-testid="stToggle"] label *,
-[data-testid="stSlider"] * {color:#E7F0EC !important;}
-[data-baseweb="select"] > div, [data-baseweb="input"] > div {background-color:#1F2D27 !important; border-color:#33453D !important;}
-[data-baseweb="select"] *, [data-baseweb="popover"] li {color:#E7F0EC !important;}
-[data-baseweb="popover"], [data-baseweb="popover"] ul, [data-baseweb="popover"] li, [data-baseweb="menu"] {background-color:#1F2D27 !important;}
-[data-baseweb="popover"] li:hover {background-color:#2B3D35 !important;}
-hr {border-color:#33453D !important;}
-</style>"""
 
 
 @st.cache_data(ttl=3600)  # re-read the files at most once an hour
@@ -45,6 +27,21 @@ def load_updated():
         return date.fromisoformat(Path("data/last_updated.txt").read_text().strip())
     except Exception:
         return None
+
+
+def style(fig, height=420):
+    """Shared look: legend and axis text at 17 pt, bigger hover text."""
+    fig.update_layout(
+        height=height,
+        margin=dict(t=20, b=10, l=10, r=10),
+        font=dict(size=14),
+        hoverlabel=dict(font_size=14),
+        legend=dict(title_text="", orientation="h", yanchor="top", y=-0.15,
+                    font=dict(size=17), itemsizing="constant", itemwidth=60),
+    )
+    fig.update_xaxes(tickfont=dict(size=17), title_font=dict(size=17), automargin=True)
+    fig.update_yaxes(tickfont=dict(size=17), title_font=dict(size=17), automargin=True)
+    return fig
 
 
 df = load()
@@ -68,9 +65,9 @@ sb = st.sidebar
 sb.header("Filters")
 rtos = sorted(df["rto_location"].unique())
 chosen = sb.multiselect("RTO", rtos, default=rtos)
-cats_all = [c for c in CHART_CATS if c in set(df["vehicle_category"])]
+cats_all = [c for c in CATS if c in set(df["vehicle_category"])]
 cats_sel = sb.multiselect("Fuel category", cats_all, default=cats_all)
-cats_sel = [c for c in CHART_CATS if c in cats_sel]
+cats_sel = [c for c in CATS if c in cats_sel]
 include_partial = True
 if partial_year is not None:
     include_partial = sb.checkbox(f"Include {partial_year} (year to date)", value=True)
@@ -79,38 +76,7 @@ if len(avail) > 1:
     lo, hi = sb.select_slider("Years", options=avail, value=(avail[0], avail[-1]))
 else:
     lo = hi = avail[0]
-dark = sb.toggle("Dark mode", value=False)
 sb.caption("These filters apply to every chart on the page.")
-
-# Colours for the chosen mode
-TXT = "#E7F0EC" if dark else "#12201B"
-GRID = "#33453D" if dark else "#D6E0DB"
-BG = "#0E1512" if dark else "#FFFFFF"
-PAL = PAL_DARK if dark else PAL_LIGHT
-if dark:
-    st.markdown(DARK_CSS, unsafe_allow_html=True)
-
-
-def style(fig, height=420):
-    """Shared look: legend and axis text at 17 pt, theme-aware colours."""
-    fig.update_layout(
-        template="plotly_dark" if dark else "plotly_white",
-        paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        height=height, margin=dict(t=20, b=10, l=10, r=10),
-        font=dict(size=14, color=TXT), hoverlabel=dict(font_size=14),
-        legend=dict(title_text="", orientation="h", yanchor="top", y=-0.15,
-                    font=dict(size=17, color=TXT), itemsizing="constant", itemwidth=60),
-    )
-    fig.update_xaxes(tickfont=dict(size=17, color=TXT), title_font=dict(size=17, color=TXT),
-                     gridcolor=GRID, automargin=True)
-    fig.update_yaxes(tickfont=dict(size=17, color=TXT), title_font=dict(size=17, color=TXT),
-                     gridcolor=GRID, automargin=True)
-    return fig
-
-
-def show(fig):
-    st.plotly_chart(fig, use_container_width=True, theme=None)
-
 
 d = df[df["rto_location"].isin(chosen) & df["vehicle_category"].isin(cats_sel) & df["year"].between(lo, hi)]
 if d.empty:
@@ -139,38 +105,28 @@ c2.metric("Total Registrations for years selected", f"{int(d['registrations'].su
 # ---------------------------------------------------------------- 1. Trend
 st.subheader("Registration trend")
 metric = st.radio("Metric", ["Registrations", "Cumulative registrations"], horizontal=True, key="trend_metric")
-tbl_cats = cats_sel + [TABLE_ONLY]
-d_tbl = df[df["rto_location"].isin(chosen) & df["vehicle_category"].isin(tbl_cats) & df["year"].between(lo, hi)]
-wide_t = (d_tbl.pivot_table(index="year", columns="vehicle_category", values="registrations", aggfunc="sum")
-          .reindex(index=years, columns=tbl_cats).fillna(0))
+wide = (cat_year.pivot(index="year", columns="vehicle_category", values="registrations")
+        .reindex(index=years, columns=cats_sel).fillna(0))
 if metric == "Cumulative registrations":
-    wide_t = wide_t.cumsum()
-wide = wide_t[cats_sel]
+    wide = wide.cumsum()
 long = wide.reset_index().melt(id_vars="year", var_name="vehicle_category", value_name="value")
 long["Year"] = long["year"].map(label)
 
 chart_col, table_col = st.columns(2)
 with chart_col:
     fig = px.line(long, x="Year", y="value", color="vehicle_category", markers=True,
-                  color_discrete_map=PAL, category_orders={"vehicle_category": cats_sel, "Year": year_labels})
+                  color_discrete_map=COLORS, category_orders={"vehicle_category": cats_sel, "Year": year_labels})
     fig.update_traces(line=dict(width=3), marker=dict(size=9),
                       hovertemplate="%{fullData.name}<br>%{x}: %{y:,.0f}<extra></extra>")
     fig.update_xaxes(type="category", title=None)
     fig.update_yaxes(title=metric, tickformat=",d")
-    show(style(fig, height=460))
+    st.plotly_chart(style(fig, height=460), use_container_width=True)
 with table_col:
-    cols = [[f"{v:,.0f}" for v in wide_t[c]] for c in tbl_cats]
-    head_bg, cell_bg = ("#1F2D27", "#16211C") if dark else ("#E4ECE8", "#FFFFFF")
-    tfig = go.Figure(go.Table(
-        columnwidth=[2.8] + [1.2] * len(years),
-        header=dict(values=["Category"] + year_labels, fill_color=head_bg, line_color=GRID,
-                    font=dict(color=TXT, size=14), align=["left"] + ["right"] * len(years)),
-        cells=dict(values=[tbl_cats] + cols, fill_color=cell_bg, line_color=GRID, height=32,
-                   font=dict(color=TXT, size=14), align=["left"] + ["right"] * len(years))))
-    tfig.update_layout(height=60 + 32 * (len(tbl_cats) + 1), margin=dict(t=10, b=0, l=0, r=0),
-                       paper_bgcolor="rgba(0,0,0,0)")
-    show(tfig)
-    st.caption("Exact figures behind the chart. Diesel Hybrid appears here only.")
+    tbl = wide.T  # one row per category, one column per year
+    tbl.columns = year_labels
+    tbl.index.name = None
+    st.dataframe(tbl.style.format("{:,.0f}"), use_container_width=True)
+    st.caption("Exact figures behind the chart.")
 if partial:
     st.caption(f"YTD = year to date. {latest} is still in progress.")
 
@@ -187,7 +143,7 @@ rto["share"] = (rto["registrations"] / rto["total"].where(rto["total"] > 0) * 10
 order = rto.groupby("rto_location")["registrations"].sum().sort_values(ascending=False).index.tolist()
 xcol = "registrations" if mode == "Total registrations" else "share"
 fig = px.bar(rto, y="rto_location", x=xcol, color="vehicle_category", orientation="h",
-             color_discrete_map=PAL, custom_data=["registrations", "share", "total"],
+             color_discrete_map=COLORS, custom_data=["registrations", "share", "total"],
              category_orders={"rto_location": order, "vehicle_category": cats_sel})
 fig.update_traces(hovertemplate=(
     "<b>%{y}</b><br>%{fullData.name}<br>Registrations: %{customdata[0]:,}"
@@ -197,7 +153,10 @@ if mode == "Total registrations":
     fig.update_xaxes(title="Registrations" + ("" if pick_year != "All years" else ", all years in range"), tickformat=",d")
 else:
     fig.update_xaxes(title="Share of the RTO's registrations", range=[0, 100], ticksuffix="%")
-show(style(fig, height=520))
+st.plotly_chart(style(fig, height=560), use_container_width=True)
+if any("(KA43)" in r or "(KA52)" in r for r in rtos):
+    st.caption("Note: KA-43 Devanahalli and KA-52 Nelamangala belong to Bengaluru Rural district, whereas the "
+               "remaining 10 RTOs in the dashboard belong to Bengaluru Urban district.")
 st.caption("RTOs are ordered by total registrations for the period shown, highest first.")
 
 # ------------------------------------------------------------ 3 and 4
@@ -206,15 +165,15 @@ with left:
     st.subheader("Total EV registrations by year")
     totals = cat_year.groupby("Year", sort=False)["registrations"].sum().reindex(year_labels)
     fig = px.bar(cat_year, x="Year", y="registrations", color="vehicle_category",
-                 color_discrete_map=PAL, category_orders={"vehicle_category": cats_sel, "Year": year_labels})
+                 color_discrete_map=COLORS, category_orders={"vehicle_category": cats_sel, "Year": year_labels})
     fig.update_traces(hovertemplate="%{fullData.name}<br>%{x}: %{y:,.0f}<extra></extra>", selector=dict(type="bar"))
     fig.add_trace(go.Scatter(x=totals.index, y=totals.values, mode="text",
                              text=[f"<b>{v:,.0f}</b>" for v in totals.values],
-                             textposition="top center", textfont=dict(size=15, color=TXT),
+                             textposition="top center", textfont=dict(size=15),
                              showlegend=False, hoverinfo="skip"))
     fig.update_xaxes(type="category", title=None)
     fig.update_yaxes(title="Registrations", tickformat=",d", range=[0, float(totals.max()) * 1.15])
-    show(style(fig))
+    st.plotly_chart(style(fig), use_container_width=True)
 with right:
     head, pick = st.columns([5, 3])
     head.subheader("EV Category share by Year")
@@ -222,15 +181,15 @@ with right:
                           format_func=lambda y: f"{y} (year to date)" if partial and y == latest else str(y))
     mix = cat_year[cat_year["year"] == year]
     fig = px.pie(mix, names="vehicle_category", values="registrations", hole=0.5,
-                 color="vehicle_category", color_discrete_map=PAL,
+                 color="vehicle_category", color_discrete_map=COLORS,
                  category_orders={"vehicle_category": cats_sel})
-    fig.update_traces(sort=False, textinfo="percent", textfont_size=16, marker=dict(line=dict(color=BG, width=2)),
+    fig.update_traces(sort=False, textinfo="percent", textfont_size=16,
                       hovertemplate="%{label}<br>Registrations: %{value:,}<br>Share: %{percent}<extra></extra>")
-    show(style(fig))
+    st.plotly_chart(style(fig), use_container_width=True)
 
 # -------------------------------------------------------------------- Notes
 st.divider()
-st.caption("**Fuel types with low or no registrations are not included:** diesel hybrid (shown in the table only), "
-           "plug-in hybrid EV, petrol/CNG hybrid combinations, and hydrogen / fuel cell.")
+st.caption("**Fuel types with low or no registrations are not included:** diesel hybrid, plug-in hybrid EV, "
+           "petrol/CNG hybrid combinations, and hydrogen / fuel cell.")
 st.caption("**Petrol Hybrid (incl. E20)** adds together Vahan's Petrol/Hybrid and Petrol(E20)/Hybrid labels, "
            "because vehicles moved from one label to the other over time.")
