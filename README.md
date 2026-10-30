@@ -16,7 +16,7 @@ An interactive dashboard of electric and hybrid vehicle registrations across Ben
 - **Source:** [VAHAN dashboard](https://vahan.parivahan.gov.in/vahan4dashboard/), Ministry of Road Transport and Highways. Data runs from 2021, and the current year is year-to-date (YTD).
 - **Vehicle types:** no vehicle-type filter is applied, so figures are expected to cover all vehicle types (two-wheelers, three-wheelers, cars, buses and others), not cars only.
 - **What a figure means:** new registrations in that period. It is not the number of EVs on the road.
-- **RTOs:** the 10 Bengaluru Urban RTOs (KA-01 to KA-05, KA-41, KA-50, KA-51, KA-53, KA-59). Devanahalli (KA-43) and Nelamangala (KA-52), both Bengaluru Rural, are being added.
+- **RTOs:** the 10 Bengaluru Urban RTOs (KA-01 to KA-05, KA-41, KA-50, KA-51, KA-53, KA-59). 2 Bengaluru Rural RTO's Devanahalli (KA-43) and Nelamangala (KA-52), are included/added.
 
 ### Fuel categories
 
@@ -53,7 +53,7 @@ streamlit run app.py
 
 ## Disclaimer
 
-An independent project, not affiliated with or endorsed by MoRTH or VAHAN. The figures come from a third-party scrape of a public website and may contain errors. Check against the official source before relying on them.
+This is an independent project, not affiliated with or endorsed by MoRTH or VAHAN. The figures come from a third-party scrape of a public website and may contain errors. Check against the official source before relying on them.
 
 ## Feedback
 
