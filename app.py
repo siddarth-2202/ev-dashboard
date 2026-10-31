@@ -62,6 +62,18 @@ st.markdown(
     "and trends over time."
 )
 
+_labels = set(df["rto_location"])
+_has_rural = any("(KA43)" in r for r in _labels) and any("(KA52)" in r for r in _labels)
+_urban = ("Bengaluru Central (KA01), Bengaluru West (KA02), Bengaluru East (KA03), Bengaluru North (KA04), "
+          "Bengaluru South (KA05), Jnanabharathi (KA41), Yelahanka (KA50), Electronic City (KA51), "
+          "Krishnarajapuram (KA53), Chandapura (KA59)")
+if _has_rural:
+    st.markdown(f"The RTOs considered include 10 from Bengaluru Urban District - ({_urban}), and 2 from "
+                "Bengaluru Rural District - Devanahalli (KA43) and Nelamangala (KA52).")
+else:
+    st.markdown(f"The RTOs considered include 10 from Bengaluru Urban District - ({_urban}). Devanahalli (KA43) "
+                "and Nelamangala (KA52), both in Bengaluru Rural District, are being added.")
+
 st.subheader("📊 Data Sources")
 last_updated_text = f"{updated:%d %b %Y}" if updated else "not available"
 st.markdown(
