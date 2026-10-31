@@ -11,13 +11,15 @@ from pathlib import Path
 
 import pandas as pd
 
-# RTO code (as in the portal's folder names) -> label shown on the dashboard.
+# RTO code -> label shown on the dashboard.
+# Keep the KEYS exactly as the portal writes them (KA1, not KA01): they are matched against the scraper's
+# folder names. Only the labels on the right are free to change.
 RTOS = {
-    "KA1": "Bengaluru Central (KA1)",
-    "KA2": "Bengaluru West (KA2)",
-    "KA3": "Bengaluru East (KA3)",
-    "KA4": "Bengaluru North (KA4)",
-    "KA5": "Bengaluru South (KA5)",
+    "KA1": "Bengaluru Central (KA01)",
+    "KA2": "Bengaluru West (KA02)",
+    "KA3": "Bengaluru East (KA03)",
+    "KA4": "Bengaluru North (KA04)",
+    "KA5": "Bengaluru South (KA05)",
     "KA41": "Jnanabharathi (KA41)",
     "KA43": "Devanahalli (KA43)",  # Bengaluru Rural district
     "KA50": "Yelahanka (KA50)",
