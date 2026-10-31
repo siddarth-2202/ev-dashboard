@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-st.set_page_config(page_title="Bengaluru EV registrations", layout="wide")
+st.set_page_config(page_title="Bengaluru EV Registrations Dashboard", layout="wide")
 
 CATS = ["Electric (BOV)", "Pure EV", "Strong Hybrid EV", "Petrol Hybrid (incl. E20)"]
 COLORS = {"Electric (BOV)": "#2F5D9B", "Pure EV": "#0E9F7E",
@@ -52,13 +52,29 @@ this_year = (updated or datetime.now(IST).date()).year
 all_years = sorted(int(y) for y in df["year"].unique())
 partial_year = all_years[-1] if all_years[-1] >= this_year else None
 
-st.title("Bengaluru EV registrations")
-st.caption("Source: Vahan dashboard, Ministry of Road Transport and Highways.")
-st.caption(f"Last updated: {updated:%d %b %Y}" if updated else "Last updated: not available")
+st.title("Bengaluru EV Registrations Dashboard")
+
+st.subheader("📈 About This Dashboard")
+st.markdown(
+    "This interactive dashboard visualizes electric and hybrid vehicle registrations across Bengaluru RTOs "
+    f"from {all_years[0]} to {all_years[-1]}" + (" (year to date)" if partial_year else "") + ". "
+    "It provides insights into the mix of fuel categories, how registrations are distributed across RTOs, "
+    "and trends over time."
+)
+
+st.subheader("📊 Data Sources")
+last_updated_text = f"{updated:%d %b %Y}" if updated else "not available"
+st.markdown(
+    "- **Registration data:** [VAHAN dashboard](https://vahan.parivahan.gov.in/vahan4dashboard/), "
+    "Ministry of Road Transport and Highways\n"
+    f"- **Last updated:** {last_updated_text}"
+)
 st.caption("Note: Vehicle categories follow VAHAN fuel-type classifications. Electric (BOV) and Pure EV represent "
            "fully electric vehicles; Strong Hybrid EV and Petrol Hybrid (incl. E20) represent hybrid vehicles. "
            "Diesel Hybrid vehicles are excluded due to low numbers."
            + (f" {partial_year} data is year-to-date (YTD)." if partial_year else ""))
+st.markdown("👨‍💻 Created by **Siddharth** - Connect: [LinkedIn](https://www.linkedin.com/in/mohanasiddharth/) "
+            "| [GitHub](https://github.com/siddarth-2202)")
 
 # ------------------------------------------------------------------ Sidebar
 sb = st.sidebar
