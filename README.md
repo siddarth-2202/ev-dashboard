@@ -42,7 +42,7 @@ Excluded because of low or no numbers: diesel hybrid, plug-in hybrid EV, petrol/
 2. `build_csv.py` keeps the chosen fuel types, combines labels, runs sanity checks and writes `data/ev_data.csv` and `data/last_updated.txt`.
 3. `app.py` (Streamlit) reads those files and draws the dashboard. It redeploys whenever the repo changes.
 
-The refresh runs weekly from the author's computer on a schedule, so it can lag if that computer is off. The "Last updated" date on the dashboard shows when it last worked. A GitHub Actions workflow is included but disabled, because VAHAN did not accept connections from GitHub's servers in testing.
+The data is refreshed manually, about once a month. The ‘Last updated’ date on the dashboard shows when it last ran. A GitHub Actions workflow is included but disabled, because VAHAN did not accept connections from GitHub’s Actions servers in testing.
 
 ## Run it locally
 
