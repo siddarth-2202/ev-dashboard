@@ -2,16 +2,25 @@ name: Update EV data
 
 on:
   schedule:
-    - cron: "30 2 * * 1"   # every Monday, 02:30 UTC = 08:00 India time
+    - cron: "30 2 * * 1"   # every Monday, 02:30 UTC = 08:00 India time (GitHub can start it a little late)
   workflow_dispatch:        # lets you run it by hand from the Actions tab
 
 permissions:
   contents: write           # needed so the job can save the new CSV
 
+concurrency:
+  group: update-ev-data     # never run two updates at the same time
+  cancel-in-progress: false
+
+env:
+  # Version of the scraper to use. "main" always takes the newest. After a run that works, you can
+  # replace it with a specific commit code so that a later change to the scraper cannot break the update.
+  SCRAPER_REF: main
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -21,31 +30,49 @@ jobs:
 
       - name: Get the scraper
         # Cloned at run time rather than copied, because the project has no licence file.
-        run: git clone --depth 1 https://github.com/RevTpark/vahan-scraper.git scraper
+        run: |
+          git clone https://github.com/RevTpark/vahan-scraper.git scraper
+          git -C scraper checkout "$SCRAPER_REF"
+          git -C scraper log -1 --format="Scraper version: %H"
 
       - name: Install libraries
         run: pip install -r scraper/requirements.txt pandas
 
-      - name: Download Vahan data for the 10 Bengaluru RTOs
-        run: >
-          python scraper/scripts/api.py
-          --yaxis "Fuel" --xaxis "Month Wise" --state "Karnataka"
-          --start-year 2021 --out raw
-          --rto "BENGALURU CENTRAL" "BENGALURU EAST" "BENGALURU NORTH"
-          "BENGALURU SOUTH" "BENGALURU WEST" "CHANDAPURA" "ELECTRONIC CITY"
-          "JNANABHARATHI" "KRISHNARAJAPURAM" "YALAHANKA"
-
-      - name: Build the dashboard CSV
-        run: python build_csv.py raw --strict
+      - name: Download Vahan data and build the CSV (up to 4 attempts)
+        shell: bash
+        run: |
+          run_once() {
+            python scraper/scripts/api.py \
+              --yaxis "Fuel" --xaxis "Month Wise" --state "Karnataka" \
+              --start-year 2021 --out raw \
+              --rto "BENGALURU CENTRAL" "BENGALURU EAST" "BENGALURU NORTH" \
+                    "BENGALURU SOUTH" "BENGALURU WEST" "CHANDAPURA" "ELECTRONIC CITY" \
+                    "JNANABHARATHI" "KRISHNARAJAPURAM" "YALAHANKA" "DEVANAHALLI" "NELAMANGALA" \
+            && python build_csv.py raw --strict
+          }
+          for attempt in 1 2 3 4; do
+            if run_once; then
+              echo "Succeeded on attempt $attempt"
+              exit 0
+            fi
+            echo "Attempt $attempt did not complete."
+            if [ "$attempt" -lt 4 ]; then
+              echo "Waiting 15 minutes before trying again..."
+              sleep 900
+            fi
+          done
+          echo "All attempts failed. The existing data was left unchanged."
+          exit 1
 
       - name: Save the CSV if it changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ev_data.csv
+          git add data/ev_data.csv data/last_updated.txt
           if git diff --cached --quiet; then
             echo "No changes"
           else
             git commit -m "Update EV data $(date -u +%F)"
+            git pull --rebase origin main
             git push
           fi
